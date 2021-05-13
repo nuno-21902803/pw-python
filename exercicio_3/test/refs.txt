@@ -1,0 +1,7 @@
+lambda
+  helloW
+
+apiGate
+    tecwebWK -> https://pdkr2wzde6.execute-api.us-east-2.amazonaws.com/environment
+    myPriveInfo -> https://thsvd0b8dh.execute-api.eu-west-1.amazonaws.com/private
+

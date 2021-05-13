@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<title> TecWeb Workshop </title>
+
+<body>
+
+<div>
+    <h1>Hello TecWeb</h1>
+</div>
+
+<div>
+    <h3>API Gateway Lambda Call</h3>
+
+    <h1>
+        <div id="api_gateway_lambda_call"></div>
+    </h1>
+    
+    <button onclick="callAwsLambdaFunction()">Call it!
+    </button>
+
+    <h1>
+        <div id="api_gateway_private_call"></div>
+    </h1>
+    
+    <button onclick="callAwsLambdaFunctionPriv()">Call it!
+    </button>
+
+</div>
+
+
+<script>
+    function callAwsLambdaFunction() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("api_gateway_lambda_call").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "https://thsvd0b8dh.execute-api.eu-west-1.amazonaws.com/environment" , true);
+        xhttp.send();
+    }
+</script>
+
+
+<script>
+    function callAwsLambdaFunctionPriv() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("api_gateway_private_call").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "https://thsvd0b8dh.execute-api.eu-west-1.amazonaws.com/private" , true);
+        xhttp.send();
+    }
+</script>
+
+</body>
+
+</html>
