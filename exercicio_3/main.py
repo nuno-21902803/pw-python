@@ -1,6 +1,4 @@
-import csv
 import os
-import pathlib
 
 
 def pede_pasta():
